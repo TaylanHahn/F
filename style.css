@@ -1,0 +1,109 @@
+@charset "utf-8";
+@font-face { /*@ usado para importar arquivos*/
+    font-family: oldnewspaper;
+    src: url(./Fontes/OldNewspaperTypes.ttf);
+}
+
+body{
+    margin:0;
+    padding: 0;
+    height: 100vh; 
+    width: 100vw;
+    background-image: url(subtle-prism.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    height: 550px;
+    width: 970px;
+    overflow: hidden; /*Limita a visualição da imagem, apenas no espaço do container*/
+    position: absolute; /*Torna possível alterar a posição do container*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Alterar a posição do eixo do container.*/
+}
+
+.imagem img{
+    width: 100%;
+    height: 100%;
+}
+
+.navegacao{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%); /*Novamente para ajustar o eixo no centro*/
+    display: flex;
+}
+
+.bar{
+    background-color: #cccccc;
+    width: 30px;
+    height: 7px;
+    margin: 6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.bar:hover{
+    background-color: #fda400;
+}
+
+input{
+    display: none; /*Para sumir as bolinhas de troca das imagens e deixar só o Label editado.*/
+}
+
+.imagens{
+    display: flex; /*Para posicionar as imagens lado a lado*/
+    height: 100%;
+    width: 600%; /*Aqui foi colocado 600%, porque são seis imagens que ocupam 100% do espaço visível da minha div.*/
+}
+
+.imagem{
+    width: 16.6666666667%;
+    transition: 0.5s;
+}
+
+#imagem1:checked ~ .img1{ /*A hashtag é usada para invocar a id do html. Já o til indica sobre o quê minha configuração irá operar (no caso é a .img1)*/
+    margin-left: 0;
+}
+
+#imagem2:checked ~ .img1{
+    margin-left: -16.6666666667%; /* Nessa numeração, foi feito o cálculo com base em dividir 100 por 6. (100 da proporção(%) que ocupa no meu div e 6 por serem seis imagens.*/
+}
+
+#imagem3:checked ~ .img1{
+    margin-left: -33.3333333333%;
+}
+
+#imagem4:checked ~ .img1{
+    margin-left: -50%;
+}
+
+#imagem5:checked ~ .img1{
+    margin-left: -66.6666666667%;
+}
+
+#imagem6:checked ~ .img1{
+    margin-left: -83.3333333333%;
+}
+
+
+h1{
+    font-family: oldnewspaper; /**/
+    font-size: 3em;
+    text-align:center;
+    color:bisque;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+footer{
+    position: absolute; /*permite movimentar o footer (no caso) livremente*/
+    bottom: 5px;
+    color: bisque;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+}
